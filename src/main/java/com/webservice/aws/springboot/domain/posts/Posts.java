@@ -1,5 +1,6 @@
 package com.webservice.aws.springboot.domain.posts;
 
+import com.webservice.aws.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -24,7 +25,7 @@ import javax.persistence.*;
     // JPA를 사용할 경우 DB 데이터를 작업할 때 실제 쿼리를 날리기보다, 이 Entity 클래스의 수정을 통해 작업함
     // Entity 클래스에서는 절대 Setter 메소드를 만들지 않음
     // 대신, 해당 필드의 값 변경이 필요하면 명확히 그 목적과 의도를 나타낼 수 있는 메소드를 추가해야 함
-public class Posts { 
+public class Posts extends BaseTimeEntity {
     
     // @id
         // 해당 테이블의 PK 필드를 나타냄
@@ -57,4 +58,10 @@ public class Posts {
         this.content = content;
         this.author = author;
     }
+
+    public void update(String title, String content){
+        this.title = title;
+        this.content = content;
+    }
+
 }
