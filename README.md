@@ -1,1 +1,1 @@
-# 🎩 Spring boot와 AWS를 사용하여 웹 서비스를 구현하는 프로젝트
+# 🎩 Spring boot와 AWS를 사용한 웹 서비스 프로젝트
