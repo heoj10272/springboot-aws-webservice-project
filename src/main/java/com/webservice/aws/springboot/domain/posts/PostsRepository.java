@@ -2,8 +2,9 @@ package com.webservice.aws.springboot.domain.posts;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-
+import org.springframework.data.repository.query.Param;
 import java.util.List;
+import java.util.Optional;
 
 // 해당 인터페이스는 Posts 클래스로 Database를 접근하게 해줄 JpaRepository임
 // 보통 ibatis나 MyBatis 등에서 Dao라고 불리는 DB Layer 접근자임
@@ -16,6 +17,7 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 
     @Query("SELECT p FROM Posts p ORDER BY p.id DESC")
     List<Posts> findAllDesc();
-}
 
+
+}
 

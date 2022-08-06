@@ -14,9 +14,9 @@ repositories {
 }
 
 //for Junit 5
-test {
+/*test {
     useJUnitPlatform()
-}
+}*/
 
 dependencies {
     //(3)
@@ -47,8 +47,10 @@ dependencies {
         // 소셜 로그인 등 클라이언트 입장에서 소셜 기능 구현 시 필요한 의존성입니다.
         // spring-security-oauth2-client와 spring-security-oauth2-jose를 기본으로 관리해줍니다.
     implementation('org.springframework.boot:spring-boot-starter-oauth2-client') // 권한 관련
+    // DB에 session을 저장하는 단계에서 추가됨.
     implementation('org.springframework.session:spring-session-jdbc') // 권한 관련
 
     testImplementation('org.springframework.boot:spring-boot-starter-test')
+    // 스프링 시큐리티 테스트를 위한 여러 도구를 지원해준다.
     testImplementation("org.springframework.security:spring-security-test") // 권한 관련
 }

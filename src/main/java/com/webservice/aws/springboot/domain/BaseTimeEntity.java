@@ -1,6 +1,6 @@
 package com.webservice.aws.springboot.domain;
 
-import jdk.vm.ci.meta.Local;
+//import jdk.vm.ci.meta.Local;
 import lombok.Getter;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;

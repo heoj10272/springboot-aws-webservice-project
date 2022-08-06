@@ -11,23 +11,27 @@
                 <!-- true/false 여부만을 판단할 뿐입니다. -->
                 <!-- 그래서 머스테치에서는 항상 최종값을 넘겨줘야 합니다. -->
                 <!-- 여기서도 역시 userName이 있다면 userName을 노출시키도록 구성했습니다. -->
-                {{#userName}}
-                    Logged in as: <span id="user">{{userName}}</span>
+                {{#loginUserName}}
+                    Logged in as: <span id="user">{{loginUserName}}</span>
                     <!-- a href="/logout" -->
                     <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그아웃 URL입니다.-->
                     <!-- 즉, 개발자가 별도로 저 URL에 해당하는 컨트롤러를 만들 필요가 없습니다. -->
                     <!-- SecurityConfig 클래스에서 URL을 변경할 순 있지만 기본 URL을 사용해도 충분하니 여기서는 그대로 사용합니다. -->
                     <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-                {{/userName}}
+                {{/loginUserName}}
                 <!-- 머스테치에서 해당 값이 존재하지 않는 경우에는 ^을 사용합니다. -->
                 <!-- 여기서는 userName이 없다면 로그인 버튼을 노출시키도록 구성했습니다. -->
-                {{^userName}}
+                {{^loginUserName}}
                     <!-- a href="/oauth2/authorization/google" -->
                     <!-- 스프링 시큐리티에서 기본적으로 제공하는 로그인 URL입니다. -->
                     <!-- 로그아웃 URL과 마찬가지로 개발자가 별도의 컨트롤러를 생성할 필요가 없습니다. -->
                     <!-- -->
                     <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-                {{/userName}}
+                    <!-- 네이버 로그인 URL은 application-oauth.properties에 등록한 redirect-uri 값에 맞춰 자동으로 등록됩니다. -->
+                    <!-- /oauth2/authorization/ 까지는 고정이고 마지막 Path만 각 소셜 로그인 코드를 사용하면 됩니다. -->
+                    <!-- 여기서는 naver가 마지막 Path가 됩니다. -->
+                    <a href="/oauth2/authorization/naver" class="btn btn-secondary active" role="button">Naver Login</a>
+                {{/loginUserName}}
             </div>
         </div>
         <br>

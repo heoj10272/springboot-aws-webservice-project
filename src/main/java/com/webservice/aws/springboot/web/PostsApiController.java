@@ -2,6 +2,7 @@ package com.webservice.aws.springboot.web;
 
 import com.webservice.aws.springboot.domain.posts.PostsRepository;
 import com.webservice.aws.springboot.service.posts.PostsService;
+import com.webservice.aws.springboot.web.dto.PostsListResponseDto;
 import com.webservice.aws.springboot.web.dto.PostsResponseDto;
 import com.webservice.aws.springboot.web.dto.PostsSaveRequestDto;
 import com.webservice.aws.springboot.web.dto.PostsUpdateRequestDto;
@@ -9,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Path;
+import java.util.List;
 
 
 // @RequiredArgsConstructor
@@ -36,9 +38,14 @@ public class PostsApiController {
     }
 
     @GetMapping("/api/v1/posts/{id}")
-    public PostsResponseDto findById (@PathVariable Long id){
+    public PostsResponseDto findById(@PathVariable Long id){
         return postsService.findById(id);
     }
 
+    // 모든 리스트 가져오기 api (테스트 작성)
+    @GetMapping("/api/v1/posts/all")
+    public List<PostsListResponseDto> all(){
+        return postsService.findAllDesc();
+    }
 
 }

@@ -1,6 +1,6 @@
 package com.webservice.aws.springboot.domain.user;
 
-import com.jojoldu.book.springboot.domain.BaseTimeEntity;
+import com.webservice.aws.springboot.domain.BaseTimeEntity;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
