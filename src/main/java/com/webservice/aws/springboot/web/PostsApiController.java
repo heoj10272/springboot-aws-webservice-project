@@ -10,6 +10,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
 
 import java.nio.file.Path;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -46,6 +47,14 @@ public class PostsApiController {
     @GetMapping("/api/v1/posts/all")
     public List<PostsListResponseDto> all(){
         return postsService.findAllDesc();
+    }
+
+    // postman 테스트용
+    @GetMapping("/api/v1/posts/test")
+    public List test() {
+        List list = new ArrayList();
+        list.add("test");
+        return list;
     }
 
 }
