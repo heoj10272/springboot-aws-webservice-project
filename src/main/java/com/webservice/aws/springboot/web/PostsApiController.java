@@ -56,5 +56,4 @@ public class PostsApiController {
         list.add("test");
         return list;
     }
-
 }
