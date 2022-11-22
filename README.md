@@ -6,3 +6,5 @@
 데이터베이스 : `RDS` - `MariaDB`<br>
 배포 : `Git`<br>
 CI/CD : `Github Action` - `CodeDeploy`
+<br>
+`OAuth2` : `Naver` , `Google` 
